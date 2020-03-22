@@ -1,0 +1,12 @@
+pip-tools
+
+xmltodict
+requests
+
+starlette
+jinja2
+aiofiles
+uvicorn
+
+pytest
+pytest-vcr
