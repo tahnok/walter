@@ -13,7 +13,11 @@
             font-family: sans-serif;
         }
         .large {
+          font-size: 450%;
+        }
+        p {
           font-size: 150%;
+          margin: 16px;
         }
         .weather {
           text-align: center;
@@ -38,6 +42,9 @@
         h2 {
           padding-left: 10px;
         }
+        .weather-icon {
+          width: 90px;
+        }
     </style>
   </head>
   <body>
@@ -46,7 +53,7 @@
         <h2>Now</h2>
         <div id="now">
             <div class="weather">
-              <img src='{{ url_for('static', path="/images/" + weather.condition_icon + ".gif") }}' />
+              <img class="weather-icon" src='{{ url_for('static', path="/images/" + weather.condition_icon + ".gif") }}' />
               <p class="large">{{weather.temperature}}°C</p>
               <p>{{weather.condition}}</p>
             </div>
@@ -55,7 +62,7 @@
         <div class="later">
           {% for item in weather.forecasts %}
             <div class="weather later_box">
-              <img src='{{ url_for('static', path="/images/" + item[1] + ".gif") }}' />
+              <img class="weather-icon" src='{{ url_for('static', path="/images/" + item[1] + ".gif") }}' />
               <p>{{item[0]}}</p>
               <p>{{item[2]}}</p>
             </div>
